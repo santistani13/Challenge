@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ProyectosService } from 'src/app/services/proyectos.service';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 
@@ -18,7 +19,8 @@ proyecto = {
   status:''
 }
 myDate = new Date();
-  constructor( private Pservice: ProyectosService ) { 
+  constructor( private Pservice: ProyectosService,
+               private router: Router ) { 
                
                }
 
@@ -44,6 +46,7 @@ confirmarFormulario(formulario: NgForm ){
   console.log(this.proyecto);
   this.Pservice.crearProyecto(this.proyecto);
   this.myDate;
+  this.router.navigate(['/misProyectos']);
   }else{
     Object.values( formulario.controls ).forEach( control => {
       control.markAllAsTouched();
