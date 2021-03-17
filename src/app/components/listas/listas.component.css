@@ -1,0 +1,35 @@
+
+.titleAndButton{
+    display: flex;
+    justify-content: space-between;
+}
+.trs{
+    cursor:pointer;
+    margin: 4px;
+}
+.trs:hover{
+    border: 1px solid grey;
+}
+.p{
+    font-size: 20px;
+    text-decoration: underline;
+}
+.edit-delete{
+    display:flex;
+    justify-content: space-around;
+}
+.pTh{
+    color:black;
+}
+.edit-hover:hover{
+    color:blue;
+    transition: 0.3s;
+}
+.delete-hover:hover{
+    color:red;
+    transition:0.3s;
+}
+p{
+    color:grey;
+    font-size: 10px;
+}

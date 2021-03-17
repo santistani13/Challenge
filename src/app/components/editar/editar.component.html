@@ -1,0 +1,76 @@
+<div class="animated fadeIn">
+    <div class="addTitle">
+        <i class="fas fa-long-arrow-alt-left pointer" routerLink="/misProyectos">Back</i>
+        <h3>Edit project</h3>
+    </div>
+    <hr>
+    <form autocomplete="off" (ngSubmit)=guardar(formulario) #formulario="ngForm" >
+        <p>Project name <input type="text" 
+                               class="form-control"
+                               name="nombre"
+                               [class.is-invalid]="nombre.invalid && nombre.touched"
+                               [ngModel]= "proyecto.nombre"
+                               placeholder=""
+                               required
+                               minlength="5"
+                               #nombre="ngModel">
+                               <small *ngIf="nombre.invalid && nombre.touched"
+                               class="form-text text-danger">Insert a valid name</small>
+                               </p>
+   
+<p>Project description <input type="text" 
+                                class="form-control"
+                                name="descripcion"
+                                [class.is-invalid]="descripcion.invalid && descripcion.touched"
+                                [ngModel]= "proyecto.descripcion"
+                                placeholder=""
+                                required
+                                minlength="5"
+                                #descripcion="ngModel">
+                                <small *ngIf="descripcion.invalid && descripcion.touched"
+                                class="form-text text-danger">Insert a valid description</small>
+                                </p>
+                                  
+    <p>Project manager <select class="form-control"
+                                    name="managerProyect"
+                                    [class.is-invalid]="managerProyect.invalid && managerProyect.touched"
+                                    [ngModel]="proyecto.managerProyect"
+                                    required
+                                    #managerProyect="ngModel">  
+                                 <option> Walt Cosani </option>
+                                 <option> Ignacio Truffa </option>
+                             </select> 
+                             <small *ngIf="managerProyect.invalid && managerProyect.touched" class="form-text text-danger" >Select an option</small></p> 
+    <p>Assigned to <select class="form-control"
+                                name="assignedTo"
+                                [class.is-invalid]="assignedTo.invalid && assignedTo.touched"
+                                [ngModel]="proyecto.assignedTo"
+                                required
+                                #assignedTo="ngModel">  
+                             <option> Walt Cosani </option>
+                             <option> Ignacio Truffa </option>
+                         </select> 
+                         <small *ngIf="assignedTo.invalid && assignedTo.touched" class="form-text text-danger" >Select an option</small></p>            
+       <p>Status <select class="form-control"
+                            name="status"
+                            [class.is-invalid]="status.invalid && status.touched"
+                            [ngModel]="proyecto.status"
+                            required
+                            #status="ngModel">  
+                         <option> Enabled </option>
+                         <option> Disabled </option>
+                     </select> 
+                     <small *ngIf="status.invalid && status.touched" class="form-text text-danger" >Select an option</small></p>            
+     <div class="form-group row">
+                        <label class="col-2 col-form-label">&nbsp;</label>
+                        <div class="input-group col-md-8">
+                          <button  (click)="confirmarFormulario(formulario)" type="submit" class="btn btn-outline-success btn-block">
+                            Update project
+                          </button>
+                        </div>          
+    </div>                               
+                                                                     
+    
+   </form>                        
+
+</div>

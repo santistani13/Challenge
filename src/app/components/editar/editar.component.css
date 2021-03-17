@@ -1,0 +1,12 @@
+.addTitle{
+    display: flex;
+}
+h3{
+    margin-left: 10px;
+}
+.pointer{
+    cursor: pointer;
+}
+.pointer:hover{
+    text-decoration: underline;
+}

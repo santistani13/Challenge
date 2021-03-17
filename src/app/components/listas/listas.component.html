@@ -1,0 +1,40 @@
+<div class="animated fadeIn">
+    <div class="titleAndButton">
+        <h3>
+           My projects
+        </h3>
+        <button (click)="agregarProyecto()" routerLink="/agregarProyecto" class="btn btn-success"> <i class="fas fa-plus"></i> Add project</button>
+    </div>
+    <hr>
+    <div class="row m-5 table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="p">Project info</th>
+                    <th class="p">Project description  </th>
+                    <th class="p">Project manager</th>
+                    <th class="p">Assigned to </th>
+                    <th class="p">Status</th>
+                    <th class="p">Edit/delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="trs" *ngFor="let p of proyecto; let i = index" >
+                    <th class="pTh">
+                  {{p.nombre}} <br>
+                  <p> Created: {{ myDate | date:'yyyy-MM-dd' }}</p>
+                    </th>
+                    <th class="pTh"> {{p.descripcion}} </th>
+                    <th class="pTh"> {{p.managerProyect}} </th>
+                    <th class="pTh"> {{p.assignedTo}} </th>
+                    <th class="pTh"> {{p.status}} </th>
+                    <th class="pTh"> <div class="edit-delete">
+                        <i class="far fa-edit edit-hover" (click)="editarProyecto(i)" routerLink="/editarProyecto"></i><i (click)="borrarProyecto(i)" class="fas fa-trash-alt delete-hover"></i>
+                    </div> </th>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+</div>
