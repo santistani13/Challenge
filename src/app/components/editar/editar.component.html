@@ -37,8 +37,9 @@
                                     [ngModel]="proyecto.managerProyect"
                                     required
                                     #managerProyect="ngModel">  
-                                 <option> Walt Cosani </option>
-                                 <option> Ignacio Truffa </option>
+                                 <option value="" disabled selected hidden> -Choose an option- </option>   
+                                 <option value="Walt Cosani"> Walt Cosani </option>
+                                 <option value="Ignacio Truffa"> Ignacio Truffa </option>
                              </select> 
                              <small *ngIf="managerProyect.invalid && managerProyect.touched" class="form-text text-danger" >Select an option</small></p> 
     <p>Assigned to <select class="form-control"
@@ -47,8 +48,9 @@
                                 [ngModel]="proyecto.assignedTo"
                                 required
                                 #assignedTo="ngModel">  
-                             <option> Walt Cosani </option>
-                             <option> Ignacio Truffa </option>
+                             <option value="" disabled selected hidden> -Choose an option- </option>
+                             <option value="Walt Cosani"> Walt Cosani </option>
+                             <option value="Ignacio Truffa"> Ignacio Truffa </option>
                          </select> 
                          <small *ngIf="assignedTo.invalid && assignedTo.touched" class="form-text text-danger" >Select an option</small></p>            
        <p>Status <select class="form-control"
@@ -57,8 +59,9 @@
                             [ngModel]="proyecto.status"
                             required
                             #status="ngModel">  
-                         <option> Enabled </option>
-                         <option> Disabled </option>
+                         <option value="" disabled selected hidden> -Choose an option- </option>
+                         <option value="Enabled"> Enabled </option>
+                         <option value="Disabled"> Disabled </option>
                      </select> 
                      <small *ngIf="status.invalid && status.touched" class="form-text text-danger" >Select an option</small></p>            
      <div class="form-group row">

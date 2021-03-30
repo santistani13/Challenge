@@ -57,7 +57,7 @@ myDate = new Date();
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'The project could not be created!',
+          text: 'The project could not be updated!',
           footer: 'Check the form please, thanks you.'
         })
       })
